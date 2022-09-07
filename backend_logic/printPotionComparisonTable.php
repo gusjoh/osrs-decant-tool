@@ -159,7 +159,7 @@ function printPotionComparisonTable($lowAvgHighMode, $minQuantity, $hoursData){
 							<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
 							</div>
 							<div class="modal-body text-white">
-							<div class="row d-none d-lg-flex">
+							<div class="row d-none d-lg-flex fw-bold">
 							<div class="col-6 col-lg">Potion</div>
 							<div class="col-6 col-lg">Last instasell</div>
 							<div class="col-6 col-lg">Last instabuy</div>
