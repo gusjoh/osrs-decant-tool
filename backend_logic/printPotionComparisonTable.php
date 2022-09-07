@@ -160,7 +160,11 @@ function printPotionComparisonTable($lowAvgHighMode, $minQuantity, $hoursData){
 							</div>
 							<div class="modal-body text-white">
 							<div class="row d-none d-lg-flex">
-							'.getModalCellTitles($lowAvgHighMode).'
+							<div class="col-6 col-lg">Potion</div>
+							<div class="col-6 col-lg">Last instasell</div>
+							<div class="col-6 col-lg">Last instabuy</div>
+							<div class="col-6 col-lg">Averaged cost</div>
+							<div class="col-6 col-lg">Total quantity</div>
 							</div>														
 							';
 							foreach ($potsCatArray as $potion => $potInfo) {
@@ -295,44 +299,6 @@ function getTimeToForm($timeInHours){
 	}
 	return $options;
 }
-function getModalCellTitles($fastAvgSlowMode){
-	$returnValue = ""; 
-	switch ($fastAvgSlowMode) {
-		case 1:
-			$returnValue = '<div class="col-6 col-lg">Potion</div>
-			<div class="col-6 col-lg">Last instasell</div>
-			<div class="col-6 col-lg">Last instabuy</div>
-			<div class="col-6 col-lg">Averaged cost</div>
-			<div class="col-6 col-lg">Total quantity</div>';
-			break;
-		case 11:
-			//TODO
-			break;
-		case 2:
-			$returnValue = '<div class="col-6 col-lg">Potion</div>
-			<div class="col-6 col-lg">Last instasell</div>
-			<div class="col-6 col-lg">Last instabuy</div>
-			<div class="col-6 col-lg">Averaged cost</div>
-			<div class="col-6 col-lg">Total quantity</div>';
-			break;
-		case 3:
-			$returnValue = '<div class="col-6 col-lg">Potion</div>
-			<div class="col-6 col-lg">Last instasell</div>
-			<div class="col-6 col-lg">Last instabuy</div>
-			<div class="col-6 col-lg">Averaged cost</div>
-			<div class="col-6 col-lg">Total quantity</div>';
-			break;
-		case 33:
-			//TODO 
-			break;
-		default:
-			# code...
-		break;
-	}
-	return $returnValue;
-
-}
-
 function getTimeElapsedSinceLastTrade($seconds){
 	//Day
 	if($seconds >= 86400){
