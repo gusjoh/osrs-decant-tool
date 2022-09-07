@@ -108,9 +108,11 @@ function printPotionComparisonTable($lowAvgHighMode, $minQuantity, $hoursData){
 				<div class="col-sm">
 					<label for="modeDecantOption" class="form-label">Mode</label>
 					<select id="modeDecantOption" name="modeDecantOption" class="form-select">
-						<?php 
-						echo(getModeToForm($lowAvgHighMode));
-						?>
+					<option value="1">Fast (latest)</option>
+					<option value="11">Fast (average)</option>
+					<option value ="2">Average (average)</option>
+					<option value="3">Slow (latest)</option>
+					<option value="33">Slow (average)</option>
 					</select>
 				</div>
 				<div class="col-sm">
@@ -293,50 +295,6 @@ function getTimeToForm($timeInHours){
 	}
 	return $options;
 }
-function getModeToForm($fastAvgSlowMode){
-	//Should be simplified
-	switch ($fastAvgSlowMode) {
-		case 1:
-		return '<option selected value="1">Fast (latest)</option>
-		<option value="11">Fast (average)</option>
-		<option value ="2">Average (average)</option>
-		<option value="3">Slow (latest)</option>
-		<option value="33">Slow (average)</option>';
-		break;
-		case 11:
-		return '<option value="1">Fast (latest)</option>
-		<option selected value="11">Fast (average)</option>
-		<option value ="2">Average (average)</option>
-		<option value="3">Slow (latest)</option>
-		<option value="33">Slow (average)</option>';
-		break;
-		case 2:
-		return '<option value="1">Fast (latest)</option>
-		<option value="11">Fast (averaged)</option>
-		<option selected value ="2">Average (average)</option>
-		<option value="3">Slow (latest)</option>
-		<option value="33">Slow (average)</option>';
-		break;
-		case 3:
-		return '<option value="1">Fast (latest)</option>
-		<option value="11">Fast (average)</option>
-		<option value ="2">Average (average)</option>
-		<option selected value="3">Slow (latest)</option>
-		<option value="33">Slow (average)</option>';
-		break;
-		case 33:
-		return '<option value="1">Fast (latest)</option>
-		<option value="11">Fast (average)</option>
-		<option value ="2">Average (average)</option>
-		<option value="3">Slow (latest)</option>
-		<option selected value="33">Slow (average)</option>';
-		break;
-		default:
-			return "error";
-		break;
-	}
-}
-
 function getModalCellTitles($fastAvgSlowMode){
 	$returnValue = ""; 
 	switch ($fastAvgSlowMode) {

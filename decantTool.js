@@ -1,5 +1,7 @@
-addSortListeners();
-
+window.addEventListener('load', () => {
+	addSortListeners();
+	stylePotionForm();
+});
 //TODO: https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript Add re-sorting on page load.
 function addSortListeners(){
 	var potionComparisonTable = document.querySelector("#potionComparisonTable");
@@ -8,7 +10,7 @@ function addSortListeners(){
 	var lastDescSortedIndex = 0;
 	headers.forEach((element, index, array) => {
 		element.addEventListener("click", function(e){
-			sortPotionTable(event, index)
+			sortPotionTable(e, index)
 		});
 	});
 	function sortPotionTable(event, index){
@@ -36,4 +38,24 @@ function addSortListeners(){
 		}		
 	}
 }
+function stylePotionForm(){
+	
+	let potionFormModeSelect = document.querySelector('#modeDecantOption');
+	let potionFormModeOptions = potionFormModeSelect.querySelectorAll('option');
 
+	let params = (new URL(document.location)).searchParams;
+	let potionFormMode = null;
+	if(potionFormMode = params.get('modeDecantOption')){
+		potionFormModeOptions.forEach(option => {		
+			if(potionFormMode == option.value){
+				option.setAttribute('selected','');
+			}			
+		});		
+	}else{
+		potionFormModeOptions.forEach(option => {
+			if(option.value == 2){
+				option.setAttribute('selected','');
+			}			
+		});
+	}
+}
