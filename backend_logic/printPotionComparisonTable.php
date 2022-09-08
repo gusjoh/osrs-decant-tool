@@ -171,20 +171,24 @@ function printPotionComparisonTable($lowAvgHighMode, $minQuantity, $hoursData){
 								if($minQuantity <= $potInfo["totalVolume"]){
 									//If untiltered
 									$modalString .='
-									<div class="row d-none d-lg-flex">
+									<div class="row d-lg-flex">
 									';
 								}else{
 									//Filtered
 									$modalString .='
-									<div class="row d-none d-lg-flex text-decoration-line-through">
+									<div class="row d-lg-flex text-decoration-line-through">
 									';
 
 								}
-								$modalString .= '<div class="col-6 col-lg"><a class="link-light" target="_blank" href="https://prices.runescape.wiki/osrs/item/'.$potInfo["id"].'">'.$potion.'</a></div>
-								<div class="col-6 col-lg">'.$potInfo["latestLowDosePrice"].' ('.$potInfo["latestLow"].') / '.getTimeElapsedSinceLastTrade($potInfo["latestLowTimeElapsed"]).'</div>
-								<div class="col-6 col-lg">'.$potInfo["latestHighDosePrice"].' ('.$potInfo["latestHigh"].') / '.getTimeElapsedSinceLastTrade($potInfo["latestHighTimeElapsed"]).'</div>
-								<div class="col-6 col-lg">'.$potInfo["avgAvgDosePrice"].' ('.$potInfo["avgAvgPrice"].')</div>
-								<div class="col-6 col-lg">'.$potInfo["totalVolume"].'</div>
+								$modalString .= '<div class="col-12 col-lg"><a class="link-light" target="_blank" href="https://prices.runescape.wiki/osrs/item/'.$potInfo["id"].'">'.$potion.'</a></div>
+								<div class="col-6 d-lg-none">Last instasell:</div>
+								<div class="col-6 col-lg text-end text-lg-start">'.$potInfo["latestLowDosePrice"].' ('.$potInfo["latestLow"].') / '.getTimeElapsedSinceLastTrade($potInfo["latestLowTimeElapsed"]).'</div>
+								<div class="col-6 d-lg-none">Last instabuy:</div>
+								<div class="col-6 col-lg text-end text-lg-start">'.$potInfo["latestHighDosePrice"].' ('.$potInfo["latestHigh"].') / '.getTimeElapsedSinceLastTrade($potInfo["latestHighTimeElapsed"]).'</div>
+								<div class="col-6 d-lg-none">Averaged cost:</div>
+								<div class="col-6 col-lg text-end text-lg-start">'.$potInfo["avgAvgDosePrice"].' ('.$potInfo["avgAvgPrice"].')</div>
+								<div class="col-6 d-lg-none">Total volume:</div>
+								<div class="col-6 col-lg text-end text-lg-start">'.$potInfo["totalVolume"].'</div>
 								</div>';
 
 							}
