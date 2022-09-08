@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER["DOCUMENT_ROOT"].'/definitions.php';
+require_once __DIR__.'/../definitions.php';
 
 function populatePotionArrayIdsPricesQuantities($fileWithAllPrices){
 

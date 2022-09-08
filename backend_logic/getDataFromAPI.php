@@ -1,6 +1,6 @@
 <?php
 
-require_once $_SERVER["DOCUMENT_ROOT"].'/definitions.php';
+require_once __DIR__.'/../definitions.php';
 
 //Curl handlers
 $curlHandler1 = curl_init("https://prices.runescape.wiki/api/v1/osrs/latest");
