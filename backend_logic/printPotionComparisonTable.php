@@ -186,7 +186,7 @@ function printPotionComparisonTable($lowAvgHighMode, $minQuantity, $hoursData){
 								<div class="col-6 d-lg-none">Last instabuy:</div>
 								<div class="col-6 col-lg text-end text-lg-start">'.$potInfo["latestHighDosePrice"].' ('.$potInfo["latestHigh"].') / '.getTimeElapsedSinceLastTrade($potInfo["latestHighTimeElapsed"]).'</div>
 								<div class="col-6 d-lg-none">Averaged cost:</div>
-								<div class="col-6 col-lg text-end text-lg-start">'.$potInfo["avgAvgDosePrice"].' ('.$potInfo["avgAvgPrice"].')</div>
+								<div class="col-6 col-lg text-end text-lg-start potAvgAvgDosePrice">'.$potInfo["avgAvgDosePrice"].' ('.$potInfo["avgAvgPrice"].')</div>
 								<div class="col-6 d-lg-none">Total volume:</div>
 								<div class="col-6 col-lg text-end text-lg-start pot-total-quantity">'.$potInfo["totalVolume"].'</div>
 								</div>';

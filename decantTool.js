@@ -73,7 +73,35 @@ function setModalListeners(){
 	var allPotModals = document.querySelectorAll("div[id^='potModal']");
 		allPotModals.forEach(modal => {
 			modal.addEventListener('show.bs.modal', () => {
-				
+				if(modeDecantOptionQuery == 2 || modeDecantOptionQuery == null){
+					let avgPrices = modal.querySelectorAll('.potAvgAvgDosePrice');
+					let tempLowest = 0;
+					let tempHighest = 0;
+					let tempLowestNode = null;
+					let tempHighestNode = null;
+					avgPrices.forEach(priceNode => {
+						//Skip if table row is muted
+						if(!priceNode.parentElement.classList.contains('text-muted')){
+							//First value which should be dose price (averaged)
+							let price = parseInt(priceNode.textContent.split(" ")[0]);
+							if(price == 0){
+								priceNode.classList.add("text-muted");
+							}
+							if ((tempLowest > price && price != 0)|| tempLowest == 0){
+								tempLowest = price;
+								tempLowestNode = priceNode;
+							}
+							if ((tempHighest < price && price != 0)|| tempHighest == 0){
+								tempHighest = price;
+								tempHighestNode = priceNode;
+							}
+						}
+					});
+					if(tempLowest !== 0 && tempHighest !== 0 && tempHighest !== tempLowest){
+						tempLowestNode.classList.add("bg-success");
+						tempHighestNode.classList.add("bg-danger");
+					}
+				}
 			});
 		});
 }
