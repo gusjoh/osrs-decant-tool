@@ -1,6 +1,7 @@
 window.addEventListener('load', () => {
 	addSortListeners();
 	stylePotionForm();
+	setModalListeners();
 });
 //TODO: https://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript Add re-sorting on page load.
 function addSortListeners(){
@@ -58,4 +59,12 @@ function stylePotionForm(){
 			}			
 		});
 	}
+}
+function setModalListeners(){
+	var allPotModals = document.querySelectorAll("div[id^='potModal']");
+		allPotModals.forEach(modal => {
+			modal.addEventListener('show.bs.modal', () => {
+
+			});
+		});
 }
