@@ -109,10 +109,10 @@ function printPotionComparisonTable($lowAvgHighMode, $minQuantity, $hoursData){
 					<label for="modeDecantOption" class="form-label">Mode</label>
 					<select id="modeDecantOption" name="modeDecantOption" class="form-select">
 					<option value="1">Fast (latest)</option>
-					<option value="11">Fast (average)</option>
+					<option value="11" disabled>Fast (average)</option>
 					<option value ="2">Average (average)</option>
 					<option value="3">Slow (latest)</option>
-					<option value="33">Slow (average)</option>
+					<option value="33" disabled>Slow (average)</option>
 					</select>
 				</div>
 				<div class="col-sm">
