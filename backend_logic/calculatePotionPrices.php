@@ -59,14 +59,10 @@ function populatePotionArrayIdsPricesQuantities($fileWithAllPrices){
 				$potionInformation["latestLowDosePrice"] = intval(round($potionInformation["latestLow"] / $potionInformation["potionSize"]));
 				$potionInformation["latestHighTime"] = $latestPrice["data"][$potionInformation["id"]]["highTime"];
 				$potionInformation["latestLowTime"] = $latestPrice["data"][$potionInformation["id"]]["lowTime"];
-    			//https://stackoverflow.com/questions/8273804/convert-seconds-into-days-hours-minutes-and-seconds/19680778#19680778
-				//https://stackoverflow.com/questions/1519228/get-interval-seconds-between-two-datetime-in-php
 				$dtlatestHighTime = new \DateTime('@'. $potionInformation["latestHighTime"]);
 				$dtlatestLowTime = new \DateTime('@'. $potionInformation["latestLowTime"]);
 				$dtCurrent = new \DateTime('@' . time());
-				#var_dump($dtCurrent->getTimestamp() - $dtlatestHighTime->getTimestamp());
-				#var_dump($dtlatestHighTime->diff($dtCurrent)->format('%a days, %h hours, %i minutes and %s seconds'));
-			
+				//https://stackoverflow.com/questions/1519228/get-interval-seconds-between-two-datetime-in-php
 				$potionInformation["latestHighTimeElapsed"] = $dtCurrent->getTimestamp() - $dtlatestHighTime->getTimestamp();
 				$potionInformation["latestLowTimeElapsed"] = $dtCurrent->getTimestamp() - $dtlatestLowTime->getTimestamp();
 			}
