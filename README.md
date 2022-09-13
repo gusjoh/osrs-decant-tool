@@ -1,5 +1,5 @@
 # OSRS Decant tool
-A [website]() for calculating profitable trades within [Old School RuneScape (OSRS)](https://oldschool.runescape.com/ "Old School RuneScape's homepage").
+A [~~website~~]() for calculating profitable trades within [Old School RuneScape (OSRS)](https://oldschool.runescape.com/ "Old School RuneScape's homepage").
 ## Purpose
 The act of [decanting](https://oldschool.runescape.wiki/w/Decanting "Read more about decanting on the game's wiki") in OSRS refers to the conversion of certain items (mainly potions) from one size to another. Such items are either split or combined with no real hinderance in regard to costs or how many times such a conversion can be performed.
 These factors, combined with the fact that there's an [open market](https://oldschool.runescape.wiki/w/Grand_Exchange) (some limitations do apply) within the game, enables a player to make money by buying items which have a low per-use cost and decanting them into a more expensive version.
