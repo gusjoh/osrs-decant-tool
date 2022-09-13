@@ -24,6 +24,7 @@ function addSortListeners(){
 		var tableBody = potionComparisonTable.querySelector("tbody");
 		var tableRows = potionComparisonTable.querySelectorAll("tbody tr");
 		//Sorting https://stackoverflow.com/questions/67853327/sorting-a-html-table-with-arraysort
+		//Sorting https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 		if(lastDescSortedIndex == index){
 			if(index == 0){
 				//Sort strings
