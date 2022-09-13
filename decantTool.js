@@ -23,8 +23,12 @@ function addSortListeners(){
 	function sortPotionTable(event, index){
 		var tableBody = potionComparisonTable.querySelector("tbody");
 		var tableRows = potionComparisonTable.querySelectorAll("tbody tr");
-		//Sorting https://stackoverflow.com/questions/67853327/sorting-a-html-table-with-arraysort
-		//Sorting https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
+		/**********************************************************************
+		START OF CC BY-SA 4.0 : https://creativecommons.org/licenses/by-sa/4.0/
+		The code is derived from the following source: https://stackoverflow.com/questions/67853327/sorting-a-html-table-with-arraysort
+		Original author: "trincot" : https://stackoverflow.com/users/5459839/trincot
+		Code has been modified
+		**********************************************************************/
 		if(lastDescSortedIndex == index){
 			if(index == 0){
 				//Sort strings
@@ -43,7 +47,10 @@ function addSortListeners(){
 				Array.from(tableRows).sort((a, b) => b.cells[index].textContent - a.cells[index].textContent).forEach(tr => tableBody.appendChild(tr));
 			}
 			lastDescSortedIndex = index;
-		}		
+		}
+		/******************
+		END OF CC BY-SA 4.0 
+		******************/
 	}
 }
 function readQueryString(){
